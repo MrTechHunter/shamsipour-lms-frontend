@@ -15,7 +15,6 @@ import {
   TableFooter,
   TablePagination,
 } from "@material-ui/core";
-import Axios from "axios";
 import TablePaginationActions from "@material-ui/core/TablePagination/TablePaginationActions";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";

@@ -4,7 +4,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import MainSidebar from "../AdminDashboard/MainSidebar/MainSidebar";
 import AddCourse from "./AddCourse/AddCourse";
 import Styles from "./AdminCourseInfo.module.css";
-import Axios from "axios";
 import CourseInfoTable from "./AddCourse/CourseInfoTable/CourseInfoTable";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseInfo } from "../../../Redux/course/courseAction";

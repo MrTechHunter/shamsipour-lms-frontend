@@ -6,6 +6,7 @@ import Spinner_comp from "../../components/Spinner/Spinner_comp";
 import Toast_Comp from "../../components/Toast/Toast_Comp";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import axios from "../../api/http-common";
 
 const Register = () => {
   const [userName, setUserName] = useState("");
@@ -22,7 +23,7 @@ const Register = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch("/auth/register", {
+    axios.post("/auth/register", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

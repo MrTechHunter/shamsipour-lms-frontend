@@ -15,10 +15,10 @@ import {
   TableFooter,
   TablePagination,
 } from "@material-ui/core";
-import Axios from "axios";
 import TablePaginationActions from "@material-ui/core/TablePagination/TablePaginationActions";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import axios from "../../api/http-common";
 
 const useStyles = makeStyles({
   table: {
@@ -36,7 +36,7 @@ const StudentTable = () => {
   const [data, setData] = useState([]);
 
   const userList = async () => {
-    const user = await Axios.get("/users/student",{
+    const user = await axios.get("/users/student",{
         headers:{
             "Authorization":"Bearer "+localStorage.getItem("auth_token")
         }

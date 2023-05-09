@@ -7,6 +7,7 @@ import Spinner_comp from "../../components/Spinner/Spinner_comp";
 import Toast_Comp from "../../components/Toast/Toast_Comp";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "../../api/http-common";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ const Login = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch("/auth/login", {
+    axios.post("/auth/login", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

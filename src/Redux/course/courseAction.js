@@ -1,5 +1,5 @@
 import { GET__COURSES } from "./courseTypes";
-import Axios from "axios";
+import axios from "../../api/http-common";
 
 export const getCourses = (courseInfo) => {
   return {
@@ -10,7 +10,7 @@ export const getCourses = (courseInfo) => {
 
 export const fetchCourseInfo = () => {
   return (dispatch) => {
-    Axios.get("/get-courses", {
+    axios.get("/get-courses", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("auth_token"),
       },
@@ -29,7 +29,7 @@ export const fetchCourseInfo = () => {
 export const deleteCourseItem = (courseId) => {
   return (dispatch) => {
     try {
-        fetch("/delete", {
+        axios.delete("/delete", {
             method: "delete",
             headers: {
               Authorization: "Bearer " + localStorage.getItem("auth_token"),
