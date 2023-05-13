@@ -8,31 +8,31 @@ const RightSidebar = () => {
   return (
     <div>
         <div className="mb-4 rounded shadow" style={{backgroundColor:"white",padding:"10px"}}>
-      <Typography variant="h6" className="p-3">Upcoming events</Typography>
+      <Typography variant="h6" className="p-3">رویداد های پیش رو</Typography>
 
       <UpcomingEvents
         Icon={PersonIcon}
-        title="Attendance"
+        title="کاربر"
         time="Thursday, 6 May, 12:00 AM"
       />
       <UpcomingEvents
         Icon={PersonIcon}
-        title="Attendance"
+        title="کاربر"
         time="Thursday, 6 May, 12:00 AM"
       />
       <UpcomingEvents
         Icon={PersonIcon}
-        title="Attendance"
+        title="کاربر"
         time="Thursday, 6 May, 12:00 AM"
       />
       <UpcomingEvents
         Icon={PersonIcon}
-        title="Attendance"
+        title="کاربر"
         time="Thursday, 6 May, 12:00 AM"
       />
       <UpcomingEvents
         Icon={PersonIcon}
-        title="Attendance"
+        title="کاربر"
         time="Thursday, 6 May, 12:00 AM"
       />
       </div>

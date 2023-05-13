@@ -28,7 +28,7 @@ const Header = () => {
             src="https://lms.bup.edu.bd/pluginfile.php/1/theme_edumy/headerlogo2/1618037325/bup-icon.png"
             alt=""
           />
-          <h4>LMS</h4>
+          <h4>سیستم مدیریت آموزش شمسی پور</h4>
         </Link>
       </div>
       <div

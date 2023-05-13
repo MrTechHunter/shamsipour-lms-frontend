@@ -50,48 +50,48 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="left__sidebar__dashboard">
-        <Sidebar Icon={DashboardIcon} title="Dashboard" link="/" />
-        <Sidebar Icon={PersonIcon} title="Profile" link="/profile" />
-        <Sidebar Icon={TouchAppIcon} title="Grades" link="/grades" />
-        <Sidebar Icon={MessageIcon} title="Messages" link="/messages" />
+        <Sidebar Icon={DashboardIcon} title="پیشخوان" link="/" />
+        <Sidebar Icon={PersonIcon} title="پروفایل" link="/profile" />
+        <Sidebar Icon={TouchAppIcon} title="نمرات" link="/grades" />
+        <Sidebar Icon={MessageIcon} title="پیام ها" link="/messages" />
         <Sidebar
           Icon={SettingsApplicationsIcon}
-          title="Preferences"
+          title="تنظیمات"
           link="/preferences"
         />
-        <Sidebar Icon={ExitToAppIcon} title="Logout" />
+        <Sidebar Icon={ExitToAppIcon} title="خروج" />
       </div>
 
       <div className="main__body__dashboard">
         <Container>
           <div className={styles.dashboard__header__name}>
             <h2 className={styles.dashboard__name}>{user && user.userName}</h2>
-            <Link to="/">Dashboard</Link>
+            <Link to="/">پیشخوان</Link>
           </div>
         </Container>
 
         <div className="d-flex flex-wrap justify-content-md-between justify-content-md-end">
           <Body4Card
             link="/messages"
-            shortTitle="Communicate"
-            title="Message"
+            shortTitle="ارتباطات"
+            title="پیام ها"
             Icon={MessageIcon}
           />
           <Body4Card
             link="/profile"
-            shortTitle="Your Profile"
-            title="Profile"
+            shortTitle="پروفایل"
+            title=""
             Icon={AccountCircleOutlinedIcon}
           />
           <Body4Card
             link="/settings"
-            shortTitle="Preferences"
-            title="Settings"
+            shortTitle="تنظیمات"
+            title="حساب کاربری"
             Icon={SettingsApplicationsIcon}
           />
           <Body4Card
-            shortTitle="Performance"
-            title="Grades"
+            shortTitle="بازدهی"
+            title="نمرات"
             Icon={TouchAppIcon}
           />
         </div>
@@ -105,14 +105,14 @@ const Dashboard = () => {
                   color="primary"
                   variant="contained"
                 >
-                  Customize This Page
+                  این صفحه رو شخصی سازی کنید
                 </Button>
                 <div>
                   <Row>
                     <Col>
                       <Paper className="d-flex justify-content-between align-items-center p-2 flex-wrap">
                         <Typography variant="h6">
-                          Recently accessed courses
+                          دوره هایی که اخیرا مشاهده شده
                         </Typography>
 
                         <div className={styles.icon__style}>
@@ -168,7 +168,7 @@ const Dashboard = () => {
 
               <Container className="mt-5">
                 <Paper className="d-flex justify-content-between align-items-center p-4">
-                  <Typography variant="h6">Courses</Typography>
+                  <Typography variant="h6">دوره ها</Typography>
                 </Paper>
                 <Divider />
 
@@ -187,7 +187,7 @@ const Dashboard = () => {
 
                 <div className=" d-flex align-items-center my-2">
                   <Typography className="mr-3" variant="subtitle1">
-                    Show
+                    مشاهده
                   </Typography>
                   <select
                     className={styles.dropdown__style}
