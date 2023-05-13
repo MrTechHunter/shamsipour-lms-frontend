@@ -6,7 +6,7 @@ import Spinner_comp from "../../components/Spinner/Spinner_comp";
 import Toast_Comp from "../../components/Toast/Toast_Comp";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import axios from "../../api/http-common";
+import { baseURL } from "../../api/constants";
 
 const Register = () => {
   const [userName, setUserName] = useState("");
@@ -23,7 +23,7 @@ const Register = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.post("/auth/register", {
+    fetch(`${baseURL}/auth/register`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Register = () => {
         <Toast_Comp
           setToast={setToast}
           renderToast={toast}
-          msg="Registration Success Please Login"
+          msg="ثبت نام با موفقیت انجام شد، لطفا وارد حساب کاربری خود شوید"
         />
         <Row>
           <Col md={6} className="mx-auto mt-4 ">

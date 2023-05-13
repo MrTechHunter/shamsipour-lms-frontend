@@ -15,10 +15,10 @@ import {
   TableFooter,
   TablePagination,
 } from "@material-ui/core";
-import axios from "../../api/http-common";
 import TablePaginationActions from "@material-ui/core/TablePagination/TablePaginationActions";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { baseURL } from "../../../../api/constants";
 
 const useStyles = makeStyles({
   table: {
@@ -36,10 +36,11 @@ const TeacherTable = () => {
   const [data, setData] = useState([]);
 
   const userList = async () => {
-    const user = await axios.get("/users/teacher",{
-        headers:{
-            "Authorization":"Bearer "+localStorage.getItem("auth_token")
-        }
+    const user = await fetch(`${baseURL}/users/teacher`, {
+      method: "get",
+      headers: {
+        "Authorization": "Bearer " + localStorage.getItem("auth_token")
+      }
     })
     setData(user.data.teacherInfo)
     //console.log(user.data.teacherInfo)
@@ -49,8 +50,8 @@ const TeacherTable = () => {
     userList()
   }, []);
 
-  const deleteTeacherHandler=(userId)=>{
-    
+  const deleteTeacherHandler = (userId) => {
+
 
   }
 
@@ -82,9 +83,9 @@ const TeacherTable = () => {
                 نام استاد
               </TableCell>
               <TableCell align="center" className="text-light">
-               ایمیل
+                ایمیل
               </TableCell>
-              
+
               <TableCell align="center" className="text-light">
                 عملیات
               </TableCell>
@@ -102,13 +103,13 @@ const TeacherTable = () => {
 
                 <TableCell align="center">{row.userName}</TableCell>
                 <TableCell align="center">
-                {row.email}
+                  {row.email}
                 </TableCell>
                 <TableCell className="" align="center">
                   <IconButton>
                     <EditIcon color="primary" />
                   </IconButton>
-                  <IconButton onClick={()=>deleteTeacherHandler(row._id)}>
+                  <IconButton onClick={() => deleteTeacherHandler(row._id)}>
                     <DeleteIcon style={{ color: "red" }} />
                   </IconButton>
                 </TableCell>

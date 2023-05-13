@@ -7,7 +7,7 @@ import Spinner_comp from "../../components/Spinner/Spinner_comp";
 import Toast_Comp from "../../components/Toast/Toast_Comp";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "../../api/http-common";
+import { baseURL } from "../../api/constants";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +24,7 @@ const Login = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.post("/auth/login", {
+    fetch(`${baseURL}/auth/login`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Login = () => {
         <Toast_Comp
           setToast={setToast}
           renderToast={toast}
-          msg="Login Success"
+          msg="ورود با موفقیت"
         />
         <Row>
           <Col md={6} className="mx-auto mt-4 ">

@@ -1,12 +1,12 @@
 import { Button, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { Modal, Form } from "react-bootstrap";
-import Axios from "axios";
 import Toast_Comp from "../../../../../components/Toast/Toast_Comp";
 import Spinner_comp from "../../../../../components/Spinner/Spinner_comp";
 import "./AddCourseModal.css";
 import { useDispatch } from "react-redux";
 import { fetchCourseInfo } from "../../../../../Redux/course/courseAction";
+import { baseURL } from "../../../../../api/constants";
 
 const AddCourseModal = () => {
   const [show, setShow] = useState(false);
@@ -36,7 +36,7 @@ const AddCourseModal = () => {
     formData.append("courseDescription", courseDescription);
     formData.append("img", courseThumbnail);
 
-    fetch("/post-course", {
+    fetch(`${baseURL}/post-course`, {
       body: formData,
       method: "post",
       headers: {

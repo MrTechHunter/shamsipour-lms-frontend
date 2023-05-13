@@ -18,7 +18,7 @@ import {
 import TablePaginationActions from "@material-ui/core/TablePagination/TablePaginationActions";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import axios from "../../api/http-common";
+import { baseURL } from "../../../../api/constants";
 
 const useStyles = makeStyles({
   table: {
@@ -36,10 +36,11 @@ const StudentTable = () => {
   const [data, setData] = useState([]);
 
   const userList = async () => {
-    const user = await axios.get("/users/student",{
-        headers:{
-            "Authorization":"Bearer "+localStorage.getItem("auth_token")
-        }
+    const user = await fetch(`${baseURL}/users/student`, {
+      method: "get",
+      headers: {
+        "Authorization": "Bearer " + localStorage.getItem("auth_token")
+      }
     })
     setData(user.data.studentInfo)
     //console.log(user.data.teacherInfo)
@@ -77,9 +78,9 @@ const StudentTable = () => {
                 نام استاد
               </TableCell>
               <TableCell align="center" className="text-light">
-               ایمیل
+                ایمیل
               </TableCell>
-              
+
               <TableCell align="center" className="text-light">
                 عملیات
               </TableCell>
@@ -97,7 +98,7 @@ const StudentTable = () => {
 
                 <TableCell align="center">{row.userName}</TableCell>
                 <TableCell align="center">
-                {row.email}
+                  {row.email}
                 </TableCell>
                 <TableCell className="" align="center">
                   <IconButton>
