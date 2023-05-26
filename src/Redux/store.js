@@ -1,8 +1,8 @@
-import { applyMiddleware, createStore } from 'redux'
-import rootReducer from './rootReduer'
-import Thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { configureStore } from "@reduxjs/toolkit";
+import { authApi } from "./service/authApi.js";
 
-const store=createStore(rootReducer,composeWithDevTools(applyMiddleware(Thunk)))
-
-export default store
+export const store = configureStore({
+  reducer: { [authApi.reducerPath]: authApi.reducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat([authApi.middleware]),
+});
