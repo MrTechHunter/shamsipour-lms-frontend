@@ -17,7 +17,9 @@ export const authApi = createApi({
         };
       },
       transformResponse: (response, meta, arg) => {
-        return response.data;
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("userInfo", JSON.stringify(response.userInfo));
+        return response;
       },
     }),
   }),
