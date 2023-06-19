@@ -6,21 +6,22 @@ import FormControl from '../../../components/form';
 import CheckBox from '../../../components/checkbox';
 import Button from '../../../components/button';
 import { Link } from 'react-router-dom';
-// import { useLoginMutation } from '../../../redux/services/authApi';
+import { useLoginMutation } from '../../../redux/services/authApi';
 import ErrorHandler from '../../../helpers/ErrorHandler';
 
 const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
-  // const [login, { isLoading, error }] = useLoginMutation();
-  const submitHandler = async ({ username, password }: { username: string; password: string }) => {
-    // await login({ username, password });
+  const [login, { isLoading, error }] = useLoginMutation();
+  const submitHandler = ({ email, password }: { email: string; password: string }) => {
+    console.log('clicked');
+    login({ email, password });
   };
 
-  // useEffect(() => {
-  //   if (error) {
-  //     ErrorHandler(error);
-  //   }
-  // }, [error]);
+  useEffect(() => {
+    if (error) {
+      ErrorHandler(error);
+    }
+  }, [error]);
 
   return (
     <Formik
@@ -35,9 +36,9 @@ const LoginForm = () => {
             <FormControl
               control="input"
               type="text"
-              name="username"
+              name="email"
               label="نام‌کاربری"
-              maxLength={20}
+              // maxLength={20}
               rightIcon="me-user"
               notice="کد ملی ۱۰ رقمی خود را وارد کنید."
             />
@@ -61,7 +62,13 @@ const LoginForm = () => {
                 فراموشی رمز عبور
               </Link>
             </div>
-            <Button type="submit" size="lg-wide" color="primary">
+            <Button
+              disabled={isLoading}
+              type="submit"
+              size="lg-wide"
+              color="primary"
+              onClick={() => submitHandler(formik.values)}
+            >
               ورود
             </Button>
           </Form>

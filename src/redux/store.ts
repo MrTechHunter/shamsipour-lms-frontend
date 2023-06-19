@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { modalSlice } from './reducers/modal';
+import { authApi } from './services/authApi';
 
 export const store = configureStore({
   reducer: {
-    modal: modalSlice.reducer,
+    [authApi.reducerPath]: authApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([]),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([authApi.middleware]),
 });

@@ -10,7 +10,7 @@ import './ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
 function App() {
-  const [token, setToken] = useState(!!getLocalStorage('token') || getSessionStorage('token'));
+  const [token, setToken] = useState(!!getLocalStorage('token') || !!getSessionStorage('token'));
   useEffect(() => {
     const _token = getLocalStorage('token') || getSessionStorage('token');
     _token ? setToken(true) : setToken(false);

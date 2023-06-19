@@ -1,4 +1,4 @@
 export default {
-	password: '',
-	username: '',
+  password: '',
+  email: '',
 };
