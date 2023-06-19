@@ -60,14 +60,14 @@ const InputFilledComponent = ({
   const error: boolean = form.touched[field.name] && form.errors[field.name];
   const [showPassword, togglePassword] = useState(false);
   const [leftIconClassName, setLeftIconClassName] = useState(
-    type === 'password' ? (showPassword ? 'me-Eye' : 'me-Eye-closed') : leftIcon
+    type === 'password' ? (showPassword ? 'lms-Eye' : 'lms-Eye-closed') : leftIcon
   );
   const passwordClickHandler = () => {
     if (type === 'password') {
       if (!showPassword) {
-        setLeftIconClassName('me-Eye');
+        setLeftIconClassName('lms-Eye');
       } else {
-        setLeftIconClassName('me-Eye-closed');
+        setLeftIconClassName('lms-Eye-closed');
       }
       togglePassword(!showPassword);
     } else {
@@ -155,14 +155,14 @@ const InputOutlinedComponent = ({
   const error: boolean = form.touched[field.name] && form.errors[field.name];
   const [showPassword, togglePassword] = useState(false);
   const [leftIconClassName, setLeftIconClassName] = useState(
-    type === 'password' ? (showPassword ? 'me-Eye' : 'me-Eye-closed') : leftIcon
+    type === 'password' ? (showPassword ? 'lms-Eye' : 'lms-Eye-closed') : leftIcon
   );
   const passwordClickHandler = () => {
     if (type === 'password') {
       if (!showPassword) {
-        setLeftIconClassName('me-Eye');
+        setLeftIconClassName('lms-Eye');
       } else {
-        setLeftIconClassName('me-Eye-closed');
+        setLeftIconClassName('lms-Eye-closed');
       }
       togglePassword(!showPassword);
     } else {
@@ -244,7 +244,7 @@ const InputTinyComponent = ({
   const error: boolean = form.touched[field.name] && form.errors[field.name];
   const [showPassword, togglePassword] = useState(false);
   const [leftIconClassName, setLeftIconClassName] = useState(
-    type === 'password' ? (showPassword ? 'me-Eye' : 'me-Eye-closed') : leftIcon
+    type === 'password' ? (showPassword ? 'lms-Eye' : 'lms-Eye-closed') : leftIcon
   );
   useEffect(() => {
     setPlaceHolderWidth(placeHolderRef.current.offsetWidth);
@@ -252,9 +252,9 @@ const InputTinyComponent = ({
   const passwordClickHandler = () => {
     if (type === 'password') {
       if (!showPassword) {
-        setLeftIconClassName('me-Eye');
+        setLeftIconClassName('lms-Eye');
       } else {
-        setLeftIconClassName('me-Eye-closed');
+        setLeftIconClassName('lms-Eye-closed');
       }
       togglePassword(!showPassword);
     } else {

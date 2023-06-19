@@ -25,7 +25,7 @@ const Notifications = (props) => {
   // }, []);
   return (
     <Container>
-      <Icon onClick={() => toggleMenu(!menu)} className="me-Chat" title={'پیام‌ها'}>
+      <Icon onClick={() => toggleMenu(!menu)} className="lms-Chat" title={'پیام‌ها'}>
         {/*{!getUserMessagesCountLoading && !!getUserMessagesCountData && <Badge>{getUserMessagesCountData}</Badge>}*/}
       </Icon>
       {menu && (

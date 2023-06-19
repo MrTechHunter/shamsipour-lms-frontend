@@ -317,7 +317,7 @@ const ValueContainer = ({ children, ...props }) => {
 const MultiValueRemove = (props) => {
   return (
     <components.MultiValueRemove {...props}>
-      <i className="me-close_FILL0_wght400_GRAD0_opsz48-21 text-base text-black_60" />
+      <i className="lms-close text-base text-black_60" />
     </components.MultiValueRemove>
   );
 };

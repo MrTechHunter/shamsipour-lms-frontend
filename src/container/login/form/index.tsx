@@ -13,7 +13,6 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [login, { isLoading, error }] = useLoginMutation();
   const submitHandler = ({ email, password }: { email: string; password: string }) => {
-    console.log('clicked');
     login({ email, password });
   };
 
@@ -39,7 +38,7 @@ const LoginForm = () => {
               name="email"
               label="نام‌کاربری"
               // maxLength={20}
-              rightIcon="me-user"
+              rightIcon="lms-user"
               notice="کد ملی ۱۰ رقمی خود را وارد کنید."
             />
             <FormControl
@@ -48,8 +47,8 @@ const LoginForm = () => {
               name="password"
               label="رمز عبور"
               maxLength={45}
-              leftIcon="me-Eye"
-              rightIcon="me-lock"
+              leftIcon="lms-Eye"
+              rightIcon="lms-lock"
             />
             <div className="flex items-center justify-between w-full mb-3 2xl:mb-6">
               <CheckBox

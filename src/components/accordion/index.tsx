@@ -27,7 +27,7 @@ const Accordion = ({
       <Container color={variant}>
         <div className="h-6 w-full flex justify-between items-center gap-2">
           <i
-            className={`${close ? 'me-minus-square' : 'me-plus-square'} cursor-pointer p-0.5 text-2xl text-primary`}
+            className={`${close ? 'lms-minus-square' : 'lms-plus-square'} cursor-pointer p-0.5 text-2xl text-primary`}
             onClick={() => toggle(!close)}
           />
           <div className="text-sm font-medium w-full text-blue_900 leading-6">{title}</div>
@@ -44,12 +44,12 @@ const Accordion = ({
             <div className="flex justify-between items-center">
               {refresh && (
                 <i
-                  className="me-refresh_black_24dp-2 text-xl cursor-pointer p-0.5 text-primary"
+                  className="lms-refresh_black_24dp-2 text-xl cursor-pointer p-0.5 text-primary"
                   onClick={() => refresh()}
                 />
               )}
               <i
-                className={`${close ? 'me-expand' : 'me-expand-right'} cursor-pointer p-0.5 text-primary`}
+                className={`${close ? 'lms-expand' : 'lms-expand-right'} cursor-pointer p-0.5 text-primary`}
                 onClick={() => toggle(!close)}
               />
             </div>

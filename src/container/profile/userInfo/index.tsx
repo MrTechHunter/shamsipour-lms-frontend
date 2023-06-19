@@ -1,27 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Card, CardBody, CardFooter, CardHeader, HeaderTitle } from '../../../components/card';
 import { Form, Formik } from 'formik';
 import initialValue from './initialValue';
 import FormControl from '../../../components/form';
 import Button from '../../../components/button';
 import { useNavigate } from 'react-router';
-import { GENDER, USER_TYPES } from '../../../constants/dropDownOptions';
+import { GENDER } from '../../../constants/dropDownOptions';
 import validation from './validation';
-// import { useChangeProfileDetailApiMutation, useGetProfileDetailApiMutation } from '../../../redux/services/userProfile';
-import { getRoleType } from './helper';
-import TitleSkeleton from '../../../components/skeleton/title';
 import PersianNumToEnglish from '../../../helpers/persianNumToEnglish';
+import mockData from './mockData';
 
 const UserInfo = () => {
-  // const [getProfileDetail, { data: userDetail, isLoading }] = useGetProfileDetailApiMutation();
-  // const [changeProfileDetail, { data, isLoading: isUpdating, isSuccess }] = useChangeProfileDetailApiMutation();
   const navigate = useNavigate();
   const submitHandler = (val: object) => {
-    // changeProfileDetail({ ...userDetail, ...val });
+    navigate('/');
   };
-  useEffect(() => {
-    // getProfileDetail();
-  }, []);
   const isLoading = false;
 
   return (
@@ -29,79 +22,8 @@ const UserInfo = () => {
       <CardHeader>
         <HeaderTitle>مشخصات کاربری</HeaderTitle>
       </CardHeader>
-      <div className="w-full text-xs">
-        <div className="flex border-b border-black_12 py-3">
-          {isLoading ? (
-            <>
-              <TitleSkeleton />
-              <TitleSkeleton />
-            </>
-          ) : (
-            <>
-              <p className="w-[28%]">نوع کاربر</p>
-              {/* <p className="w-full">{getRoleType(userDetail?.roleTypes)}</p> */}
-            </>
-          )}
-        </div>
-        <div className="flex border-b border-black_12 py-3">
-          {isLoading ? (
-            <>
-              <TitleSkeleton />
-              <TitleSkeleton />
-            </>
-          ) : (
-            <>
-              <p className="w-[28%]">کاربر</p>
-              {/* <p className="w-full">{USER_TYPES.find((userType) => userDetail?.userType == userType.value)?.label}</p> */}
-            </>
-          )}
-        </div>
-        {true && (
-          <>
-            <div className="flex border-b border-black_12 py-3">
-              {isLoading ? (
-                <>
-                  <TitleSkeleton />
-                  <TitleSkeleton />
-                </>
-              ) : (
-                <>
-                  <p className="w-[28%]">نام شرکت/سازمان</p>
-                  {/* <p className="w-full">{userDetail?.organizationName}</p> */}
-                </>
-              )}
-            </div>
-            <div className="flex border-b border-black_12 py-3">
-              {isLoading ? (
-                <>
-                  <TitleSkeleton />
-                  <TitleSkeleton />
-                </>
-              ) : (
-                <>
-                  <p className="w-[28%]">شناسه ملی</p>
-                  {/* <p className="w-full">{userDetail?.nationalId}</p> */}
-                </>
-              )}
-            </div>
-            <div className="flex border-b border-black_12 py-3">
-              {isLoading ? (
-                <>
-                  <TitleSkeleton />
-                  <TitleSkeleton />
-                </>
-              ) : (
-                <>
-                  <p className="w-[28%]">کد اقتصادی</p>
-                  {/* <p className="w-full">{userDetail?.economicCode}</p> */}
-                </>
-              )}
-            </div>
-          </>
-        )}
-      </div>
       <Formik
-        initialValues={initialValue({})}
+        initialValues={initialValue(mockData)}
         onSubmit={submitHandler}
         validationSchema={validation}
         enableReinitialize={true}
@@ -121,6 +43,7 @@ const UserInfo = () => {
                       variant="outlined"
                       formik={formik}
                       loading={isLoading}
+                      disabled={true}
                     />
                   </div>
                   <div className="ml-4">
@@ -132,6 +55,7 @@ const UserInfo = () => {
                       variant="outlined"
                       formik={formik}
                       loading={isLoading}
+                      disabled={true}
                     />
                   </div>
                   <div className="ml-4">
@@ -147,6 +71,7 @@ const UserInfo = () => {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         formik.setFieldValue('nationalCode', PersianNumToEnglish(e.target.value));
                       }}
+                      disabled={true}
                     />
                   </div>
                   <div className="ml-4">
@@ -162,6 +87,7 @@ const UserInfo = () => {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         formik.setFieldValue('mobileNumber', PersianNumToEnglish(e.target.value));
                       }}
+                      disabled={true}
                     />
                   </div>
                   <div className="ml-4">
@@ -171,9 +97,10 @@ const UserInfo = () => {
                       label="انتخاب تاریخ تولد"
                       name="birthDate"
                       variant="outlined"
-                      leftIcon="me-Calendar"
+                      leftIcon="lms-Calendar"
                       formik={formik}
                       loading={isLoading}
+                      disabled={true}
                     />
                   </div>
                   <div className="ml-4">
@@ -185,6 +112,7 @@ const UserInfo = () => {
                       variant="outlined"
                       formik={formik}
                       loading={isLoading}
+                      disabled={true}
                     />
                   </div>
                   <div className="ml-4">
@@ -195,25 +123,14 @@ const UserInfo = () => {
                       options={GENDER}
                       formik={formik}
                       loading={isLoading}
+                      disabled={true}
                     />
                   </div>
                 </div>
               </CardBody>
               <CardFooter>
-                <Button
-                  color="primary"
-                  type="submit"
-                  size="sm"
-                  className="ml-2"
-                  // disabled={
-                  //   !formik.isValid ||
-                  //   (data
-                  //     ? JSON.stringify({ ...data }) === JSON.stringify(userDetail)
-                  //     : JSON.stringify({ ...userDetail, ...formik.values }) === JSON.stringify(userDetail))
-                  // }
-                  loading={isLoading}
-                >
-                  ذخیره
+                <Button color="primary" type="submit" size="sm" className="ml-2" loading={isLoading}>
+                  تایید
                 </Button>
                 <Button
                   color="primary-outline"

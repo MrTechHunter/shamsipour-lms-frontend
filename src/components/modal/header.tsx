@@ -19,7 +19,7 @@ const ModalHeader = ({
     <>
       {modalIcon && (
         <Circle type={type}>
-          {type === 'delete' && <Icon className="me-trash" />}
+          {type === 'delete' && <Icon className="lms-trash" />}
           {type === 'normal' && <Logo />}
         </Circle>
       )}
@@ -33,7 +33,7 @@ const ModalHeader = ({
                 dispatch(closeModal());
               }}
             >
-              <CloseButtunIcon type={type} className="me-close_FILL0_wght400_GRAD0_opsz48-21" />
+              <CloseButtunIcon type={type} className="lms-close" />
             </CloseButton>
           )}
         </>

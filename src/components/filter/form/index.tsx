@@ -71,7 +71,7 @@ const FilterForm = ({
                   label="انتخاب تاریخ شروع قرارداد"
                   name="startDate"
                   variant="tiny"
-                  leftIcon="me-Calendar"
+                  leftIcon="lms-Calendar"
                   formik={formik}
                   onChange={(data: any) => {
                     formik.setFieldValue('startDate', data);
@@ -86,7 +86,7 @@ const FilterForm = ({
                   label="انتخاب تاریخ پایان قرارداد"
                   name="endDate"
                   variant="tiny"
-                  leftIcon="me-Calendar"
+                  leftIcon="lms-Calendar"
                   formik={formik}
                   onChange={(data: any) => {
                     formik.setFieldValue('endDate', data);
@@ -104,7 +104,7 @@ const FilterForm = ({
                   name="contractCode"
                   variant="tiny"
                   spinner={isLoading && initialValues?.contractCode}
-                  leftIcon="me-search"
+                  leftIcon="lms-search"
                   formik={formik}
                   onChange={(data: any) => {
                     formik.setFieldValue('contractCode', persianNumToEnglish(data.target.value));

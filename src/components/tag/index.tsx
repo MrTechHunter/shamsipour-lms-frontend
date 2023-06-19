@@ -12,7 +12,7 @@ const Tag = ({ label, children, bordered, onClick, ...rest }: ITag) => {
     <Container {...rest} bordered={bordered}>
       <Label>{label || children}</Label>
       <IconContainer onClick={() => onClick()}>
-        <Icon className="me-close_FILL0_wght400_GRAD0_opsz48-21" />
+        <Icon className="lms-close" />
       </IconContainer>
     </Container>
   );

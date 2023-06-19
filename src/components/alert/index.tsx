@@ -23,7 +23,7 @@ const Alert = ({
       <Text>{children}</Text>
       {closeable && (
         <CloseButton onClick={toggleCloseAlertHandler} type={type}>
-          <CloseButtunIcon type={type} className="me-close_FILL0_wght400_GRAD0_opsz48-21" />
+          <CloseButtunIcon type={type} className="lms-close" />
         </CloseButton>
       )}
     </Container>

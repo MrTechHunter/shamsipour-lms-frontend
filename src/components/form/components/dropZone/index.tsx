@@ -126,10 +126,10 @@ const DropZoneWrapper = (props: any) => {
                     </div>
                     <div className="h-full w-1/3 flex justify-end items-center ml-2">
                       <a href={file.preview} download={file.file.name}>
-                        <i className=" cursor-pointer text-xl leading-6 text-primary flex justify-end font-semibold me-download" />
+                        <i className=" cursor-pointer text-xl leading-6 text-primary flex justify-end font-semibold lms-download" />
                       </a>
                       <a onClick={() => onDelete(file.id)}>
-                        <i className="cursor-pointer text-xl leading-6 mr-2 flex justify-end font-semibold me-Delete text-primary" />
+                        <i className="cursor-pointer text-xl leading-6 mr-2 flex justify-end font-semibold lms-Delete text-primary" />
                       </a>
                     </div>
                   </div>

@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'Meboka';
-  src:  url('fonts/Meboka.eot?yjtx4k');
-  src:  url('fonts/Meboka.eot?yjtx4k#iefix') format('embedded-opentype'),
-    url('fonts/Meboka.ttf?yjtx4k') format('truetype'),
-    url('fonts/Meboka.woff?yjtx4k') format('woff'),
-    url('fonts/Meboka.svg?yjtx4k#Meboka') format('svg');
+  font-family: 'lms';
+  src:  url('fonts/lms.eot?2obdu7');
+  src:  url('fonts/lms.eot?2obdu7#iefix') format('embedded-opentype'),
+    url('fonts/lms.ttf?2obdu7') format('truetype'),
+    url('fonts/lms.woff?2obdu7') format('woff'),
+    url('fonts/lms.svg?2obdu7#lms') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="me-"], [class*=" me-"] {
+[class^="lms-"], [class*=" lms-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Meboka' !important;
+  font-family: 'lms' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,142 +25,151 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.me-Tick-Square:before {
+.lms-Tick-Square:before {
   content: "\e92a";
 }
-.me-Shield-Done:before {
+.lms-Shield-Done:before {
   content: "\e928";
 }
-.me-Wallet:before {
+.lms-Wallet:before {
   content: "\e929";
 }
-.me-Password:before {
+.lms-Password:before {
   content: "\e927";
 }
-.me-Lock-outlined:before {
+.lms-Lock-outlined:before {
   content: "\e926";
 }
-.me-close_FILL0_wght400_GRAD0_opsz48-11:before {
+.lms-plus:before {
   content: "\e900";
 }
-.me-close_FILL0_wght400_GRAD0_opsz48-21:before {
+.lms-close:before {
   content: "\e901";
 }
-.me-done_white_18dp-2:before {
+.lms-done:before {
   content: "\e902";
 }
-.me-error .path1:before {
+.lms-error .path1:before {
   content: "\e903";
   color: rgb(255, 255, 255);
   opacity: 0.0100;
 }
-.me-error .path2:before {
+.lms-error .path2:before {
   content: "\e904";
   margin-left: -1em;
   color: rgb(0, 0, 0);
   opacity: 0.87;
 }
-.me-refresh_black_24dp-2:before {
+.lms-refresh:before {
   content: "\e905";
 }
-.me-warning .path1:before {
+.lms-warning .path1:before {
   content: "\e906";
   color: rgb(255, 255, 255);
   opacity: 0.0100;
 }
-.me-warning .path2:before {
+.lms-warning .path2:before {
   content: "\e907";
   margin-left: -1em;
   color: rgb(0, 0, 0);
   opacity: 0.87;
 }
-.me-Eye:before {
+.lms-Eye:before {
   content: "\e908";
 }
-.me-Eye-closed:before {
+.lms-Eye-closed:before {
   content: "\e909";
 }
-.me-Caret-down:before {
+.lms-Caret-down:before {
   content: "\e90a";
 }
-.me-Calendar:before {
+.lms-Calendar:before {
   content: "\e90b";
 }
-.me-Chat:before {
+.lms-Chat:before {
   content: "\e90c";
 }
-.me-Delete:before {
+.lms-Delete:before {
   content: "\e90d";
 }
-.me-Edit:before {
+.lms-Edit:before {
   content: "\e90e";
 }
-.me-Filter-3:before {
+.lms-Filter-3:before {
   content: "\e90f";
 }
-.me-Filter:before {
+.lms-Filter:before {
   content: "\e910";
 }
-.me-Paper-Fail:before {
+.lms-Paper-Fail:before {
   content: "\e911";
 }
-.me-Paper-Negative:before {
+.lms-Paper-Negative:before {
   content: "\e912";
 }
-.me-Paper-Plus:before {
+.lms-Paper-Plus:before {
   content: "\e913";
 }
-.me-Paper:before {
+.lms-Paper:before {
   content: "\e914";
 }
-.me-Search:before {
+.lms-Search:before {
   content: "\e915";
 }
-.me-Compress:before {
+.lms-Compress:before {
   content: "\e916";
 }
-.me-expand-right:before {
+.lms-expand-right:before {
   content: "\e917";
 }
-.me-expand:before {
+.lms-expand:before {
   content: "\e918";
 }
-.me-resize:before {
+.lms-resize:before {
   content: "\e919";
 }
-.me-lock:before {
+.lms-lock:before {
   content: "\e91a";
 }
-.me-search:before {
+.lms-search:before {
   content: "\e91b";
 }
-.me-trash:before {
+.lms-trash:before {
   content: "\e91c";
 }
-.me-user:before {
+.lms-user:before {
   content: "\e91d";
 }
-.me-download:before {
+.lms-download:before {
   content: "\e91e";
 }
-.me-exclamation-circle:before {
+.lms-exclamation-circle:before {
   content: "\e91f";
 }
-.me-info-circle:before {
+.lms-info-circle:before {
   content: "\e920";
 }
-.me-minus-square:before {
+.lms-minus-square:before {
   content: "\e921";
 }
-.me-plus-square:before {
+.lms-plus-square:before {
   content: "\e922";
 }
-.me-settings:before {
+.lms-settings:before {
   content: "\e923";
 }
-.me-times-square:before {
+.lms-times-square:before {
   content: "\e924";
 }
-.me-upload:before {
+.lms-upload:before {
   content: "\e925";
+}
+.lms-home:before {
+  content: "\e92b";
+}
+.lms-books:before {
+  content: "\e92c";
+}
+.lms-meter:before {
+  content: "\e9a6";
 }

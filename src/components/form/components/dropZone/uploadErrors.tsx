@@ -38,7 +38,7 @@ export function UploadError({ rejectedFiles }: { rejectedFiles: any }) {
                 className="flex my-1 whitespace-nowrap w-full justify-between items-center bg-blue_050 h-9 rounded"
                 key={key}
               >
-                <i className="flex mr-2  me-Paper text-error" />
+                <i className="flex mr-2  lms-Paper text-error" />
                 <p
                   className="text-xs mr-2 overflow-ellipsis overflow-hidden w-11/12"
                   title={ErrorMessages(rejectedFile.file.name, code)}
@@ -50,7 +50,7 @@ export function UploadError({ rejectedFiles }: { rejectedFiles: any }) {
                   onClick={() => handleDelete(rejectedFile.id)}
                   className="flex ml-2 cursor-pointer w-1/12 justify-end"
                 >
-                  <i className="me-close_FILL0_wght400_GRAD0_opsz48-21 text-error border border-error rounded-3xl" />
+                  <i className="lms-close_FILL0_wght400_GRAD0_opsz48-21 text-error border border-error rounded-3xl" />
                 </a>
               </div>
             );
@@ -58,7 +58,7 @@ export function UploadError({ rejectedFiles }: { rejectedFiles: any }) {
         })}
       {tooManyFiles && !!tooManyFiles.length && (
         <div className="flex my-1 whitespace-nowrap w-full justify-between items-center bg-blue_050 h-9 rounded">
-          <i className="flex mr-2  me-Paper text-error" />
+          <i className="flex mr-2  lms-Paper text-error" />
           <p
             className="text-xs mr-2 overflow-ellipsis overflow-hidden w-11/12"
             title={ErrorMessages('', 'too-many-files')}
@@ -73,7 +73,7 @@ export function UploadError({ rejectedFiles }: { rejectedFiles: any }) {
             }}
             className="flex ml-2 cursor-pointer w-1/12 justify-end"
           >
-            <i className="me-close_FILL0_wght400_GRAD0_opsz48-21 text-error border border-error rounded-3xl" />
+            <i className="lms-close_FILL0_wght400_GRAD0_opsz48-21 text-error border border-error rounded-3xl" />
           </a>
         </div>
       )}

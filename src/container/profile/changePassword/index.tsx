@@ -5,19 +5,15 @@ import FormControl from '../../../components/form';
 import validation from './validation';
 import Button from '../../../components/button';
 import { useNavigate } from 'react-router';
+import ErrorHandler from '../../../helpers/ErrorHandler';
 // import { useChangePasswordApiMutation } from '../../../redux/services/userProfile';
 
 const ChangePassword = () => {
   const navigate = useNavigate();
-  // const [changePassword, { isSuccess, isLoading }] = useChangePasswordApiMutation();
   const submitHandler = (val: any) => {
-    // changePassword(val);
+    ErrorHandler();
   };
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     navigate('/login');
-  //   }
-  // }, [isSuccess]);
+
   return (
     <Card>
       <CardHeader>
@@ -42,8 +38,8 @@ const ChangePassword = () => {
                       maxLength={20}
                       name="oldPassword"
                       variant="outlined"
-                      leftIcon="me-Eye-closed"
-                      rightIcon="me-Lock-outlined"
+                      leftIcon="lms-Eye-closed"
+                      rightIcon="lms-Lock-outlined"
                       formik={formik}
                     />
                   </div>
@@ -55,8 +51,8 @@ const ChangePassword = () => {
                       maxLength={20}
                       name="password"
                       variant="outlined"
-                      leftIcon="me-Eye-closed"
-                      rightIcon="me-Lock-outlined"
+                      leftIcon="lms-Eye-closed"
+                      rightIcon="lms-Lock-outlined"
                       formik={formik}
                     />
                   </div>
@@ -68,8 +64,8 @@ const ChangePassword = () => {
                       maxLength={20}
                       name="confirmPassword"
                       variant="outlined"
-                      leftIcon="me-Eye-closed"
-                      rightIcon="me-Lock-outlined"
+                      leftIcon="lms-Eye-closed"
+                      rightIcon="lms-Lock-outlined"
                       formik={formik}
                     />
                   </div>

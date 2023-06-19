@@ -105,7 +105,7 @@ const Settings = (props) => {
       {/*		}}*/}
       {/*	</Formik>*/}
       {/*</Modal>*/}
-      <Icon onClick={() => toggleMenu(!menu)} className="me-settings" title={'تنظیمات'} />
+      <Icon onClick={() => toggleMenu(!menu)} className="lms-settings" title={'تنظیمات'} />
       {menu && (
         <>
           <CloseableArea onClick={() => toggleMenu(!menu)} />

@@ -133,7 +133,7 @@ const GroupButton = ({
                   } ${disabled ? 'text-black_38' : ''}`}
                   title={title}
                 />
-                <TinyIcon className="me-Caret-down" visible={visible} type={type} />
+                <TinyIcon className="lms-Caret-down" visible={visible} type={type} />
               </TinyButton>
             </Tippy>
           </TinyContainer>

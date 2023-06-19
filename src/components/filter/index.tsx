@@ -15,7 +15,7 @@ const Filter = ({ filters, setFilters, isLoading }: { filters: I_Filter; setFilt
     <>
       <div className="w-full h-full mb-2">
         <div className="flex justify-start items-center">
-          <i className="me-Filter-3 h-9 w-auto ml-3 before:content-['\e90f'] before:text-2xl flex justify-center items-center mb-2" />
+          <i className="lms-Filter-3 h-9 w-auto ml-3 before:content-['\e90f'] before:text-2xl flex justify-center items-center mb-2" />
           <FilterForm submitHandler={submitHandler} initialValues={filters} isLoading={isLoading} />
         </div>
       </div>

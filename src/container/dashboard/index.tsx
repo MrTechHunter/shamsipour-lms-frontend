@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, CardBody, CardHeader } from '../../components/card';
+import { Card, CardBody, CardHeader, HeaderTitle } from '../../components/card';
 
 const Dashboard = () => {
   return (
     <Card>
-      <CardHeader>داشبورد</CardHeader>
       <CardBody>
         <div className="m-9">
           <div className="w-full border-2 h-20 rounded-lg border-dashed border-secondary_200 flex justify-center items-center text-center ">

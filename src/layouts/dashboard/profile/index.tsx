@@ -38,7 +38,7 @@ const Profile = () => {
     <Container>
       {!isLoading && !getRoleLoading && (
         <UserProfile onClick={() => toggleMenu(!menu)} title={'حساب کاربری'}>
-          <Avatar className="me-user" />
+          <Avatar className="lms-user" />
           <User>
             <Username>{getLocalStorage('userInfo').userName}</Username>
             <Role>{getLocalStorage('userInfo').role === 'Student' && 'دانشجو'}</Role>
@@ -52,14 +52,21 @@ const Profile = () => {
           <Menu>
             <MenuHeader>
               <UserProfile onClick={() => toggleMenu(!menu)} title={'حساب کاربری'}>
-                <Avatar className="me-user" />
+                <Avatar className="lms-user" />
                 <User>
                   <Username isOpen={menu}>{getLocalStorage('userInfo').userName}</Username>
                   <Role isOpen={menu}>{getLocalStorage('userInfo').role === 'Student' && 'دانشجو'}</Role>
                 </User>
               </UserProfile>
             </MenuHeader>
-            <MenuContent></MenuContent>
+            <MenuContent>
+              <MenuItem onClick={() => (window.location.href = '/profile')}>
+                <div className="profile-menu-items">اطلاعات کاربری</div>
+              </MenuItem>
+              <MenuItem onClick={() => (window.location.href = '/changePassword')}>
+                <div className="profile-menu-items">تغییر کلمه عبور</div>
+              </MenuItem>
+            </MenuContent>
             <MenuFooter>
               <MenuItem onClick={handleLogOut}>
                 <div className="profile-menu-items">خروج</div>
