@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import variables from '../../../constants/styleVariables';
 
+interface userName {
+  isOpen?: boolean;
+  limitedText?: any;
+}
+
 export const Container = styled.div`
   cursor: pointer;
   max-width: fit-content;
@@ -40,13 +45,13 @@ export const Avatar = styled.i`
     color: ${variables.colors.primary};
   }
 `;
-export const Username = styled.div`
+export const Username = styled.div<userName>`
   width: 100%;
   font-size: ${variables.fontSize.h5};
   font-weight: ${variables.fontWeight.bold};
   color: ${(props) => (props.isOpen ? `${variables.colors.white}` : `${variables.colors.primary}`)};
 `;
-export const Role = styled.div`
+export const Role = styled.div<userName>`
   width: 100%;
   font-size: ${variables.fontSize.h6};
   font-weight: ${variables.fontWeight.bold};
@@ -68,7 +73,7 @@ export const Badge = styled.div`
   min-width: 16px;
   min-height: 16px;
   border-radius: 50%;
-  background-color: ${variables.colors.red};
+  background-color: ${variables.colors.error};
   color: ${variables.colors.primary};
   font-size: ${variables.fontSize.h7};
   font-weight: ${variables.fontWeight.normal};
@@ -162,7 +167,7 @@ export const MenuItem = styled.div`
   position: relative;
   width: 100%;
   height: 28px;
-  background-color: ${(props) => (props.active ? variables.colors.surface : variables.colors.white)};
+  background-color: ${({ active }: any) => (active ? variables.colors.surface : variables.colors.white)};
   border-radius: 4px;
   margin-bottom: 4px;
   display: flex;
@@ -184,7 +189,7 @@ export const MenuItem = styled.div`
     height: inherit;
     border-radius: 4px;
     font-size: ${variables.fontSize.h6};
-    color: ${(props) => (props.active ? variables.colors.primary_variant : variables.colors.black_87)};
+    color: ${({ active }: any) => (active ? variables.colors.primary_variant : variables.colors.black_87)};
     padding: 4px 12px;
     &:hover {
       color: ${variables.colors.black_87};
@@ -222,8 +227,8 @@ export const SubMenuItem = styled.div`
     height: inherit;
     border-radius: 4px;
     font-size: ${variables.fontSize.h6};
-    color: ${(props) => props.isActiveRole && variables.colors.primary_variant};
-    background-color: ${(props) => props.isActiveRole && variables.colors.blue_050};
+    color: ${({ isActiveRole }: any) => isActiveRole && variables.colors.primary_variant};
+    background-color: ${({ isActiveRole }: any) => isActiveRole && variables.colors.blue_050};
     padding: 4px 12px;
     line-height: 20px;
     text-align: right;

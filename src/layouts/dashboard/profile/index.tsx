@@ -16,29 +16,13 @@ import {
   SubMenuItem,
 } from './style';
 import CloseableArea from '../../../components/closeableArea';
-import { clearLocalStorage } from '../../../helpers/storage';
+import { clearLocalStorage, getLocalStorage } from '../../../helpers/storage';
 import { useLocation, Link } from 'react-router-dom';
 import ProfileSkeleton from '../../../components/skeleton/profile';
-// import { useGetProfileMenuMutation } from '../../../redux/services/menuApi';
-// import {
-//   useChangeRoleApiMutation,
-//   useGetRolesApiMutation,
-//   useUserInfoApiQuery,
-// } from '../../../redux/services/userProfile';
-import { toast } from 'react-toastify';
 
 const Profile = () => {
   const { pathname } = useLocation();
   const [menu, toggleMenu] = useState(false);
-  // const [getProfileMenu, { data }] = useGetProfileMenuMutation();
-  // const { currentData: userInfo, isFetching: isLoading } = useUserInfoApiQuery();
-  // const [getRoles, { data: roles, isLoading: getRoleLoading }] = useGetRolesApiMutation();
-  // const [changeRole] = useChangeRoleApiMutation();
-  const [isHovered, setIsHovered] = useState(false);
-  // useEffect(() => {
-  //   getProfileMenu('WEB_USER');
-  //   getRoles();
-  // }, []);
   useEffect(() => {
     toggleMenu(false);
   }, [window.location.href]);
@@ -56,8 +40,8 @@ const Profile = () => {
         <UserProfile onClick={() => toggleMenu(!menu)} title={'حساب کاربری'}>
           <Avatar className="me-user" />
           <User>
-            {/* <Username>{userInfo?.firstName + ' ' + userInfo?.lastName}</Username>
-            <Role>{`${userInfo?.roleTitle || ''} (${userInfo?.organizationTitle || ''})`}</Role> */}
+            <Username>{getLocalStorage('userInfo').userName}</Username>
+            <Role>{getLocalStorage('userInfo').role === 'Student' && 'دانشجو'}</Role>
           </User>
         </UserProfile>
       )}
@@ -70,8 +54,8 @@ const Profile = () => {
               <UserProfile onClick={() => toggleMenu(!menu)} title={'حساب کاربری'}>
                 <Avatar className="me-user" />
                 <User>
-                  {/* <Username isOpen={menu}>{userInfo?.firstName + ' ' + userInfo?.lastName}</Username>
-                  <Role isOpen={menu}>{`${userInfo?.roleTitle || ''} (${userInfo?.organizationTitle || ''})`}</Role> */}
+                  <Username isOpen={menu}>{getLocalStorage('userInfo').userName}</Username>
+                  <Role isOpen={menu}>{getLocalStorage('userInfo').role === 'Student' && 'دانشجو'}</Role>
                 </User>
               </UserProfile>
             </MenuHeader>
