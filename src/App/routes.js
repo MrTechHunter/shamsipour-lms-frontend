@@ -1,25 +1,44 @@
-import React, { lazy } from "react";
+import React from 'react';
+import DashboardLayout from '../layouts/dashboard';
+import PublicLayout from '../layouts/public';
 
-import Public from "../layout/public";
-import Private from "../layout/private";
-
-const Login = lazy(() => import("../container/login"));
-const Dashboard = lazy(() => import("../container/dashborad"));
+const Dashboard = React.lazy(() => import('../container/dashboard'));
+const Login = React.lazy(() => import('../container/login/index'));
+const Register = React.lazy(() => import('../container/register/index'));
+const ForgetPassword = React.lazy(() => import('../container/forgetPassword/index'));
 
 const routes = [
   {
-    path: "/login",
+    path: '/',
     exact: true,
-    layout: Public,
-    Component: Login,
-    name: "ورود",
+    name: 'داشبورد',
+    breadcrumb: () => <span>داشبورد</span>,
+    layout: DashboardLayout,
+    Component: Dashboard,
   },
   {
-    path: "/",
+    path: '/login',
     exact: true,
-    layout: Private,
-    Component: Dashboard,
-    name: "ورود",
+    name: 'ورود',
+    breadcrumb: () => <span>ورود</span>,
+    layout: PublicLayout,
+    Component: Login,
+  },
+  {
+    layout: PublicLayout,
+    path: '/register',
+    exact: true,
+    name: 'ثبت نام',
+    breadcrumb: () => <span>ثبت نام</span>,
+    Component: Register,
+  },
+  {
+    layout: PublicLayout,
+    path: '/forget-password',
+    exact: true,
+    name: 'فراموشی رمزعبور',
+    breadcrumb: () => <span>فراموشی رمزعبور</span>,
+    Component: ForgetPassword,
   },
 ];
 

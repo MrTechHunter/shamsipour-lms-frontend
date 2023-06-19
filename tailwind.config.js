@@ -1,8 +1,65 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    colors: {
+      white: '#ffffff',
+      black_87: 'rgba(0, 0, 0, 0.87)',
+      black_60: 'rgba(0, 0, 0, 0.6)',
+      black_38: 'rgba(0, 0, 0, 0.38)',
+      black_600: 'rgba(62, 63, 68, 0.87)',
+      black_12: 'rgba(0, 0, 0, 0.12)',
+      blue_900: '#1A237E',
+      blue_800: '#283593',
+      blue_700: '#303E9F',
+      blue_600: '#3948AB',
+      blue_500: '#3F50B5',
+      blue_400: '#5C6BC0',
+      blue_300: '#7986CB',
+      blue_200: '#9FA8DA',
+      blue_100: '#C5CAE9',
+      blue_050: '#E8EAF6',
+      blue: '#2E6AAC',
+      primary: '#283593',
+      primary_variant: '#1A237E',
+      secondary_200: '#cb97fa',
+      secondary_400: '#A951F7',
+      secondary: '#E8EAF6',
+      surface: '#F5F5F5',
+      error: '#B00020',
+      black_850: 'rgba(62, 63, 68, 0.1)',
+      black_400: 'rgba(124, 133, 148, 0.2)',
+      black_300: '#57585c',
+      black_200: '#E6E6E7',
+      gray_100: 'rgba(234, 234, 238, 0.6)',
+      gray_200: '#7c8594',
+      green: '#2DA52D',
+      yellow: '#FFC021',
+    },
+    extend: {
+      backgroundImage: {
+        login: 'url("/public/assets/login_background.jpg")',
+        notFound: 'url("/public/assets/notFound.svg")',
+      },
+      width: {
+        18: '4.5rem',
+        136.75: '34.1875rem',
+      },
+      height: {
+        18: '4.5rem',
+      },
+      zIndex: {
+        1: 1,
+        2: 2,
+      },
+      fontSize: {
+        '2xs': '.5rem',
+      },
+    },
+    boxShadow: {
+      sideBar: '0px 2px 16px rgba(0, 0, 0, 0.25)',
+      none: 'none',
+      header: '0px 3px 5px rgba(9, 30, 66, 0.2), 0px 0px 0px rgba(9, 30, 66, 0.31)',
+    },
   },
   plugins: [],
 };

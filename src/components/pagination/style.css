@@ -1,0 +1,113 @@
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
+    width: fit-content;
+}
+.pagination {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.pagination > li {
+    display: inline-block;
+    padding-left: 0;
+}
+.pagination > li {
+    list-style: none;
+    border: unset;
+}
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: rgba(62, 63, 68, .87);
+    /*background-color: #fff;*/
+    background: rgba(234, 234, 238, 0.6);
+    box-shadow: 0 0 6px rgba(234, 234, 238, 0.6);
+    border: unset;
+    margin-left: 14px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.pagination>li.active>a {
+    width: 24px;
+    height: 24px;
+    background: #283593;
+    box-shadow: 0 4px 16px rgba(234, 234, 238, 0.5);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 11px;
+    color: #fff;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.pagination > li > a:hover {
+    background: #283593;
+    color: white;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    padding-left: 5px;
+    padding-right: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(234, 234, 238, 0.6);
+    box-shadow: 0 0 6px rgba(234, 234, 238, 0.6);
+    border-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    padding-left: 3px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(234, 234, 238, 0.6);
+    box-shadow: 0 0 6px rgba(234, 234, 238, 0.6);
+    border-radius: 4px;
+}
+.pagination > li:first-child > a > i {
+    width: 4px;
+    height: 6px;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination > li:last-child > a > i {
+    width: 4px;
+    height: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination > li:first-child > a > i:before,
+.pagination > li:last-child > a > i:before {
+    font-size: 10px;
+    color: rgba(62, 63, 68, .87);
+}
+.pagination > li:last-child > a:hover,
+.pagination > li:first-child > a:hover {
+    background: linear-gradient(180deg, #EEEAEB 0%, #F8F7F7 0%, #283593 0%);
+}
+.pagination > li:last-child > a:hover > i:before,
+.pagination > li:first-child > a:hover > i:before {
+    color: #fff;
+}
