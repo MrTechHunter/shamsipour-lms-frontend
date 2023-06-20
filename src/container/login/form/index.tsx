@@ -11,7 +11,7 @@ import ErrorHandler from '../../../helpers/ErrorHandler';
 
 const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login, { data, isLoading, error }] = useLoginMutation();
   const submitHandler = ({ email, password }: { email: string; password: string }) => {
     login({ email, password });
   };
@@ -21,7 +21,6 @@ const LoginForm = () => {
       ErrorHandler(error);
     }
   }, [error]);
-
   return (
     <Formik
       validationSchema={validationSchema}
