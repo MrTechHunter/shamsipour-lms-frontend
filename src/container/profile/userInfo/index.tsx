@@ -33,7 +33,7 @@ const UserInfo = () => {
           return (
             <Form name="userInfo" className="mt-6">
               <CardBody>
-                <div className="grid grid-cols-3 gap-y-4">
+                <div className="grid grid-cols-3 gap-y-4 max-sm:grid-cols-1">
                   <div className="ml-4">
                     <FormControl
                       control="input"

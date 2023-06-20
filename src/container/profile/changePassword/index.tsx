@@ -29,7 +29,7 @@ const ChangePassword = () => {
           return (
             <Form name="changePassword">
               <CardBody>
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 max-sm:grid-cols-1">
                   <div className="ml-4">
                     <FormControl
                       control="input"
@@ -56,7 +56,7 @@ const ChangePassword = () => {
                       formik={formik}
                     />
                   </div>
-                  <div>
+                  <div className="ml-4">
                     <FormControl
                       control="input"
                       type={'password'}
