@@ -5,7 +5,6 @@ import initialValue from './initialValue';
 import FormControl from '../../../components/form';
 import Button from '../../../components/button';
 import { useNavigate } from 'react-router';
-import { GENDER } from '../../../constants/dropDownOptions';
 import validation from './validation';
 import PersianNumToEnglish from '../../../helpers/persianNumToEnglish';
 import mockData from './mockData';
@@ -120,7 +119,10 @@ const UserInfo = () => {
                       control="radio"
                       label="جنسیت"
                       name="gender"
-                      options={GENDER}
+                      options={[
+                        { label: 'مرد', value: true },
+                        { label: 'زن', value: false },
+                      ]}
                       formik={formik}
                       loading={isLoading}
                       disabled={true}
