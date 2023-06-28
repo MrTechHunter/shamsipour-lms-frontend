@@ -1,5 +1,6 @@
 export const adminMenu = [
   {
+    _children: null,
     icon: 'lms-home',
     id: 1,
     key: 'dashboard',
@@ -8,6 +9,26 @@ export const adminMenu = [
     to: '/',
   },
   {
+    _children: [
+      {
+        id: 21,
+        name: 'مدیریت مدرسین',
+        parentId: 2,
+        key: 'teachers',
+        icon: 'lms-books',
+        to: '/teachersManagement',
+        _children: null,
+      },
+      {
+        id: 22,
+        name: 'مدیریت دانشجویان',
+        parentId: 2,
+        key: 'teachers',
+        icon: 'lms-books',
+        to: '/studentManagement',
+        _children: null,
+      },
+    ],
     id: 2,
     name: 'مدیریت کاربران',
     icon: 'lms-books',
@@ -27,6 +48,7 @@ export const adminMenu = [
 
 export const teacherMenu = [
   {
+    _children: null,
     id: 1,
     name: 'داشبورد',
     icon: 'lms-home',
@@ -41,12 +63,13 @@ export const studentMenu = [
     icon: 'lms-home',
     to: '/',
     key: 'dashboard',
+    _children: null,
   },
   {
     id: 3,
     name: 'دوره های من',
     icon: 'lms-meter',
-    to: '/course',
+    to: '/student-course',
     key: 'course',
     _children: null,
   },
