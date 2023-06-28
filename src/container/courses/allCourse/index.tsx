@@ -1,14 +1,19 @@
 import React from 'react';
-import { Card, CardHeader, HeaderTitle } from '../../../components/card';
+import CourseTable from './grid';
+import Button from '../../../components/button';
+import { Card, CardBody, CardHeader, HeaderTitle } from '../../../components/card';
 
-const AllCourse = () => {
+const Courses = () => {
   return (
     <Card>
       <CardHeader>
-        <HeaderTitle>تمام دوره ها</HeaderTitle>
+        <HeaderTitle>دوره ها</HeaderTitle>
+        <CardBody>
+          <CourseTable />
+        </CardBody>
       </CardHeader>
     </Card>
   );
 };
 
-export default AllCourse;
+export default Courses;

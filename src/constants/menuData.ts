@@ -73,4 +73,20 @@ export const studentMenu = [
     key: 'course',
     _children: null,
   },
+  {
+    id: 3,
+    name: 'همه دوره ها',
+    icon: 'lms-meter',
+    to: '/all-course',
+    key: 'course',
+    _children: null,
+  },
+  {
+    id: 3,
+    name: 'امتحانات',
+    icon: 'lms-Paper',
+    to: '/student-exams',
+    key: 'exam',
+    _children: null,
+  },
 ];

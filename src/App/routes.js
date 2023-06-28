@@ -14,6 +14,7 @@ const AdminStudentManagement = React.lazy(() => import('../container/userManagem
 const StudentDashboard = React.lazy(() => import('../container/dashboard/student'));
 const AllCourse = React.lazy(() => import('../container/courses/allCourse'));
 const StudentCourse = React.lazy(() => import('../container/courses/student'));
+const studentExams = React.lazy(() => import('../container/exam/student'));
 
 const routes = [
   {
@@ -71,14 +72,6 @@ const routes = [
   },
   {
     layout: DashboardLayout,
-    path: '/course',
-    exact: true,
-    name: 'درس های من',
-    breadcrumb: () => <span>مدیریت درس ها</span>,
-    Component: Courses,
-  },
-  {
-    layout: DashboardLayout,
     path: '/all-course',
     exact: true,
     name: 'درس های من',
@@ -105,9 +98,17 @@ const routes = [
     layout: DashboardLayout,
     path: '/student-course',
     exact: true,
-    name: 'مدیریت دانشجویان',
-    breadcrumb: () => <span>مدیریت دانشجویان</span>,
+    name: 'دوره های من',
+    breadcrumb: () => <span>دوره های من</span>,
     Component: StudentCourse,
+  },
+  {
+    layout: DashboardLayout,
+    path: '/student-exams',
+    exact: true,
+    name: 'امتحانات',
+    breadcrumb: () => <span>امتحانات</span>,
+    Component: studentExams,
   },
 ];
 

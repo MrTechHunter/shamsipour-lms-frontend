@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Table from '../../../../components/table';
-import mockData from '../mockData';
 import ErrorHandler from '../../../../helpers/ErrorHandler';
 import Icon from '../../../../components/tableIcon';
 import { useGetCourseMutation } from '../../../../redux/services/courseApi';
@@ -33,7 +32,7 @@ const CourseTable = () => {
         return (
           <div className="cursor-pointer w-fit p-1 flex">
             <Icon icon="lms-exclamation-circle scale-110" title="جزئیات دوره" onClick={() => ErrorHandler()} />
-            <Icon icon="lms-times-square scale-110" title="حذف دوره" onClick={() => ErrorHandler()} />
+            <Icon icon="lms-plus-square scale-110" title="شرکت در دوره" onClick={() => ErrorHandler()} />
           </div>
         );
       },
